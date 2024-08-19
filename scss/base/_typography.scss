@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 1em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: Gabarito, sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+figcaption {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------- */
+/* media-queries */
+/* -------------------------------------------------------------------- */
+
+@media (width >= 1200px) {
+  body {
+    margin: 0 auto;
+  }
+}

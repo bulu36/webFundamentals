@@ -1,0 +1,95 @@
+@use "../abstracts/variables";
+
+//Navigation Top
+/* Style for top-navigation */
+#topnav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+
+  &__link {
+    float: left;
+    display: block;
+    color: variables.$white;
+    text-align: center;
+    padding: 14px 16px;
+    //text-decoration: none;
+    font-size: 17px;
+
+    &:hover {
+      background-color: variables.$white;
+      color: black;
+    }
+
+    &--active {
+      background-color: variables.$white;
+      color: black;
+    }
+  }
+
+  &__icon {
+    display: none;
+  }
+}
+
+@media (width <= 600px) {
+  .topnav {
+    background-color: black;
+
+    &__link {
+      //&:not(:first-child) {
+        display: none;
+      //}
+
+      &.responsive {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      &--active {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    &__icon {
+      float: right;
+      display: block;
+      margin: 7.4px 5px;
+
+      & i {
+        border: 2px solid white;
+        border-radius: 50%;
+        padding: 7px 6px;
+        color: white;
+      }
+
+    }
+
+
+    /* open the menu if click the hamburger */
+
+    &.responsive {
+      position: relative;
+
+      & .topnav__link {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      & .topnav__icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+

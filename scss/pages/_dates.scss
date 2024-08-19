@@ -1,0 +1,115 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+/* tabs */
+.tabs {
+  @include mixins.section_margin;
+  display: flex;
+  justify-content: space-between;
+
+  &__button {
+    @include mixins.button;
+    flex: 0 0 49.5%;
+    height: 3em;
+    font-size: 1em;
+  }
+}
+
+/* table */
+.exercise, .testDrive {
+  @include mixins.section_margin;
+
+  &__title {
+    @include mixins.section_title;
+  }
+
+  &__select {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__checkbox {
+      margin-top: 10px;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+
+      & input {
+        height: 20px;
+        width: 20px;
+      }
+
+      & label {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__search {
+    width: 100%;
+    height: 2em;
+  }
+
+  &__table {
+    border: 2px solid variables.$yellow;
+    border-collapse: collapse;
+    margin: 1em 0;
+    padding: 0;
+    width: 100%;
+
+    & tr {
+      border: 1px solid variables.$yellow;
+    }
+
+    & th, td {
+      padding: .8em;
+      text-align: left;
+    }
+
+    & th {
+      font-size: .85em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* media-queries */
+/* -------------------------------------------------------------------- */
+
+/* table */
+@media (width < 700px) {
+  .exercise__table, .testDrive__table {
+    border: 0;
+
+    & thead {
+      display: none;
+    }
+
+    & tr {
+      border: 3px solid variables.$yellow;
+      display: block;
+      margin-bottom: .8em;
+    }
+
+    & td {
+      border-bottom: 1px solid variables.$yellow;
+      display: block;
+      font-size: 1em;
+      text-align: right;
+    }
+
+    & td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+

@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+button {
+  background-image: linear-gradient(-180deg, variables.$yellow 0%, variables.$yellow-dark 100%);
+  border-radius: .4rem;
+  border: 1px solid black;
+  cursor: pointer;
+  touch-action: manipulation;
+  font-family: Gabarito, sans-serif;
+}
+
+button:disabled {
+  color: variables.$gray;
+  border-color: variables.$gray;
+}

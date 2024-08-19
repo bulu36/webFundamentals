@@ -1,0 +1,99 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+/* comand */
+.command {
+  @include mixins.section_margin;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include mixins.section_title;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 20px;
+
+    & img {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      height: 100px;
+      width: 80px;
+      object-fit: cover;
+    }
+
+    &__title {
+      padding-left: 10px;
+      margin: 0;
+    }
+
+    &__name {
+      padding-left: 10px;
+      margin: 0;
+    }
+  }
+}
+
+/* organigram */
+.organigram {
+  @include mixins.section_margin;
+
+  &__title {
+    @include mixins.section_title;
+  }
+
+  &__picture {
+    margin: 0;
+
+    & a {
+      display: block;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------------------------------- */
+/* media-queries */
+/* -------------------------------------------------------------------- */
+
+/* command */
+@media (width >= 600px) {
+  .command {
+    &__card {
+      align-self: center;
+      grid-template-columns: 100px 400px;
+
+      & img {
+        height: 120px;
+        width: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* organigram */
+@media (width >= 600px) {
+  .organigram {
+    &__picture {
+      & a {
+        & img {
+          display: flex;
+          justify-content: center;
+          width: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+
+

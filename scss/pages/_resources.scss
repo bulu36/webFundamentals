@@ -1,0 +1,302 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+/* -------------------------------------------------------------------- */
+/* resources */
+/* -------------------------------------------------------------------- */
+.resources {
+  @include mixins.section_margin;
+  display: flex;
+  flex-direction: column;
+
+
+  &__title {
+    @include mixins.section_title;
+    flex: 1 0 100%;
+  }
+
+  &__tabs {
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      margin: 10px 0;
+      padding: 0;
+
+      & li {
+        padding-right: 10px;
+        padding-bottom: 10px;
+      }
+
+      &__button {
+        @include mixins.button;
+        width: 5rem;
+        height: 3em;
+      }
+    }
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+
+    &__cards {
+      flex: 1 0 auto;
+      border: 1px solid black;
+      border-radius: .6em;
+      background-image: linear-gradient(variables.$white, variables.$gray-light);
+      margin-bottom: 1em;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+
+      &--hidden {
+        display: none;
+      }
+
+      &__category {
+        padding: .4rem .8rem;
+        grid-column: 1;
+        font-size: 1em;
+        color: variables.$blue;
+      }
+
+      &__image {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        padding: .4rem .8rem;
+      }
+
+      &__name {
+        margin: 0;
+        padding: .4rem .8rem;
+        grid-column: 1;
+        font-size: 1.5rem;
+      }
+
+      &__number {
+        margin: 0;
+        padding: .4rem .8rem;
+        grid-column: 1;
+        font-size: 1rem;
+        color: variables.$blue-light;
+      }
+
+      &__description{
+        margin: 0;
+        padding: .4rem .8rem;
+        grid-column: 1 / span 2;
+        grid-row: 4;
+        height: 2em;
+      }
+
+      &__price {
+        margin-bottom: 1rem;
+        padding: .4rem .8rem;
+        grid-column: 1;
+        font-size: 1.5rem;
+        align-self: end;
+      }
+
+      &__like {
+        grid-column: 2;
+        margin-bottom: 1rem;
+        padding: .4rem .8rem;
+        z-index: 1;
+        justify-self: end;
+        align-self: end;
+
+        & button {
+          border: 0;
+          background-image: none;
+          background-color: transparent;
+
+          &:disabled {
+            color: black;
+          }
+        }
+
+        & i {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.error--http {
+  grid-column: 1 / span 2;
+  padding: .5rem;
+  border-radius: 10px;
+  border: 4px solid black;
+  background-color: #fd1818;
+}
+
+/* -------------------------------------------------------------------- */
+/* popup */
+/* -------------------------------------------------------------------- */
+#resource-dark-background {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgb(variables.$gray-light, 80%) ;
+}
+
+.resourcesPopup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 30rem;
+  height: 30rem;
+  background-image: linear-gradient(variables.$white, variables.$gray-light);
+  border: 2px solid black;
+  border-radius: 6px;
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  margin-top: -15rem;
+  margin-left: -15rem;
+
+  &__category {
+    margin: 2rem 0 0;
+    padding: .4rem .8rem;
+    grid-column: 1;
+    font-size: 1em;
+    color: variables.$blue;
+  }
+
+  &__image {
+    grid-column: 1 / span 2;
+    max-height: 10rem;
+    padding: .4rem .8rem;
+
+    &__img {
+      max-height: 100%;
+    }
+  }
+
+  &__icon {
+    margin: 1rem 0 0 auto;
+    padding: .4rem .8rem;
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  &__name {
+    margin: 0;
+    padding: .4rem .8rem;
+    grid-column: 1;
+    font-size: 2em;
+  }
+
+  &__number {
+    margin: 0;
+    padding: .4rem .8rem;
+    grid-column: 1;
+    font-size: 1em;
+    color: variables.$gray-light;
+  }
+
+  &__description{
+    margin: 0;
+    padding: .4rem .8rem;
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    height: 2em;
+  }
+
+  &__price {
+    margin: 0 0 1rem;
+    padding: .4rem .8rem;
+    grid-column: 1;
+    font-size: 1.5em;
+  }
+
+  &__like {
+    grid-column: 2;
+    padding: .4rem .8rem;
+    margin: 0 0 1rem auto;
+
+    & button {
+      border: 0;
+      background-image: none;
+      background-color: transparent;
+
+      &:disabled {
+        color: black;
+      }
+    }
+
+    & i {
+      font-size: 2rem;
+    }
+  }
+}
+/* -------------------------------------------------------------------- */
+/* -------------------------------------------------------------------- */
+/* media-queries */
+/* -------------------------------------------------------------------- */
+/* -------------------------------------------------------------------- */
+
+/* recources */
+@media (width >= 600px) {
+  .resources {
+    flex-flow: row wrap;
+
+
+    &__tabs {
+      border-right: 2px solid variables.$yellow;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        & li {
+          padding-right: 10px;
+          padding-bottom: 10px;
+        }
+
+        &__button {
+          font-size: 1em;
+        }
+      }
+    }
+
+    &__products {
+      flex: 1 1 50%;
+      flex-flow: row wrap;
+      align-self: flex-start;
+
+      &__cards {
+        flex: 0 0 20rem;
+        margin-left: 1em;
+        cursor: pointer;
+
+        &__description {
+          display: none;
+        }
+
+        &__image {
+          justify-self: end;
+          width: 8rem;
+        }
+
+        &__name {
+          word-break: break-word;
+        }
+
+        &__like {
+          display: none;
+        }
+      }
+    }
+  }
+}

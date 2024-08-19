@@ -1,0 +1,19 @@
+@use "../abstracts/variables";
+
+/*------------------------ footer ------------------------*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 2em;
+  background-color: black;
+  color: variables.$white;
+  font-size: 1em;
+  //text-decoration: none;
+
+  &__top, &__contact {
+    color: variables.$white;
+    //text-decoration: none;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gabarito">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js" defer></script>
+    <title>Organisation</title>
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+    <!-- header with navigation menu -->
+    <header>
+        <div class="header">
+            <figure class="header__logo">
+                <img class="header__logo__image" src="img/LogoFW-30x30.png" alt="Logo">
+            </figure>
+            <h1 class="header__title">Feuerwehr Wattenwil</h1>
+        </div>
+    </header>
+    <nav class="topnav" id="topnav">
+        <a href="index.html" class=" topnav__link">Home</a>
+        <a href="organisation.html" class="topnav__link topnav__link--active">Organisation</a>
+        <a href="dates.html" class="topnav__link">Termine</a>
+        <a href="resources.html" class="topnav__link">Einsatzmittel</a>
+        <a href="contact.html" class="topnav__link">Kontakt</a>
+        <a id="topnav-button" class="topnav__icon"><i class="fa fa-bars fa-lg"></i></a>
+    </nav>
+    <main id="main">
+        <!-- cards -->
+        <section class="command">
+            <h2 class="command__title">Kommando</h2>
+            <div class="command__card">
+                <img src="img/kader/hadorn-remo.jpg" alt="Remo">
+                <h3 class="command__card__title">Kommandant</h3>
+                <h4 class="command__card__name">Remo Hadorn</h4>
+            </div>
+            <div class="command__card">
+                <img src="img/kader/hadorn-remo.jpg" alt="Johannes">
+                <h3 class="command__card__title">Vize-Kommandant</h3>
+                <h4 class="command__card__name">Johannes Roth</h4>
+            </div>
+            <div class="command__card">
+                <img src="img/kader/hadorn-remo.jpg" alt="Jonathan">
+                <h3 class="command__card__title">Vize-Kommandant</h3>
+                <h4 class="command__card__name">Jonathan Zurbrügg</h4>
+            </div>
+            <div class="command__card">
+                <img src="img/kader/hadorn-remo.jpg" alt="Thomas">
+                <h3 class="command__card__title">Chef LZ1</h3>
+                <h4 class="command__card__name">Thomas Bähler</h4>
+            </div>
+            <div class="command__card">
+                <img src="img/kader/hadorn-remo.jpg" alt="Hanspeter">
+                <h3 class="command__card__title">Chef LZ2</h3>
+                <h4 class="command__card__name">Hanspeter Küenzi</h4>
+            </div>
+        </section>
+
+        <!-- organigram -->
+        <section class="organigram">
+            <h2 class="organigram__title">Organigramm</h2>
+            <figure class="organigram__picture">
+                <a href="file/organigram.pdf" download>
+                    <img
+                            srcset="img/organigram/organigram_small.jpg, img/organigram/organigram_large.jpg"
+                            sizes="(width < 600px), (width >= 600px)"
+                            src="img/organigram/organigram_small.jpg" alt="Bild Diagramm">
+                </a>
+                <figcaption>Organigramm Kommando</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <a class="footer__top" href="#top"><i class="fa fa-arrow-up"></i> back to top</a>
+        <a class="footer__contact" href="contact.html"><i class="fa fa-envelope-o"></i> contact</a>
+    </footer>
+</body>
+</html>

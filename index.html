@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gabarito">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/index.js" type="module" defer></script>
+    <title>Feuerwehr Wattenwil</title>
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+<!-- header with navigation menu -->
+    <header>
+    <div class="header">
+        <figure class="header__logo">
+                <img class="header__logo__image" src="img/LogoFW-30x30.png" alt="Logo">
+            </figure>
+        <h1 class="header__title">Feuerwehr Wattenwil</h1>
+    </div>
+    </header>
+    <nav class="topnav" id="topnav">
+        <a href="index.html" class=" topnav__link topnav__link--active">Home</a>
+        <a href="organisation.html" class="topnav__link">Organisation</a>
+        <a href="dates.html" class="topnav__link">Termine</a>
+        <a href="resources.html" class="topnav__link">Einsatzmittel</a>
+        <a href="contact.html" class="topnav__link">Kontakt</a>
+        <a id="topnav-button" class="topnav__icon"><i class="fa fa-bars "></i></a>
+    </nav>
+    <main id="main">
+        <!-- picture -->
+        <section class="picture">
+            <figure class="picture__image">
+                <img src="img/index/tlf.png" alt="Tanklöschfahrzeug">
+                <figcaption>Tanklöschfahrzeug</figcaption>
+            </figure>
+        </section>
+
+        <!-- important links -->
+        <section class="importantLinks">
+            <div class="importantLinks__card">
+                <i class="fa fa-sitemap fa-lg"></i>
+                <a href="organisation.html">Organisation</a>
+            </div>
+            <div class="importantLinks__card">
+                <i class="fa fa-calendar fa-lg"></i>
+                <a href="dates.html">Termine</a>
+            </div>
+            <div class="importantLinks__card">
+                <i class="fa fa-envelope-o fa-lg"></i>
+                <a href="contact.html">Kontakt</a>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <section class="description">
+            <h2 class="description__titel">Willkommen bei der Feuerwehr Wattenwil</h2>
+            <p class="description__text">
+                Die Feuerwehr Wattenwill besteht aus rund 60 freiwilligen Mitgliedern.
+                <br>Wir sind in der Gemeinde zuständig für die Brandbekämpfung, für technische Hilfeleistungen und
+                den Katastrophenschutz.</p>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial" id="testimonials">
+            <article class="testimonial__article">
+                <img src="img/picture_high.jpg" alt="Platzhalter">
+                <div class="testimonial__article__textBox">
+                    <p class="testimonial__article__textBox__zitat">Zitat</p>
+                    <p class="testimonial__article__textBox__name">Name</p>
+                    <p class="testimonial__article__textBox__company">Firma</p>
+                    <div class="testimonial__article__textBox__like">
+                        <button class="testimonial__article__textBox__like__button"><i class="fa fa-thumbs-o-up"></i></button>
+                        <span></span>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+<footer class="footer">
+    <a class="footer__top" href="#top"><i class="fa fa-arrow-up"></i> back to top</a>
+    <a class="footer__contact" href="contact.html"><i class="fa fa-envelope-o"></i> contact</a>
+</footer>
+</body>
+</html>

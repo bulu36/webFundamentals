@@ -1,0 +1,220 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+/* contact */
+.contact {
+  @include mixins.section_margin;
+
+  &__title {
+    @include mixins.section_title;
+  }
+
+  &__text {
+    margin: 1em auto;
+    max-width: 40em;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .2em;
+    max-width: 40em;
+    margin: 0 auto;
+
+    &__symbol {
+      margin-top: .8em;
+      margin-right: .4em;
+      text-align: right;
+    }
+
+    &__input {
+      height: 20px;
+      margin-top: .8em;
+    }
+
+    &__error {
+      grid-column: 2;
+      color: variables.$red;
+      font-size: .9em;
+    }
+
+    &__textarea {
+      margin-top: .8em;
+    }
+  }
+
+  &__button {
+    grid-column: 2;
+    height: 2.5em;
+  }
+}
+
+/* feedback */
+.feedback {
+  @include mixins.section_margin;
+
+  &__title {
+    @include mixins.section_title;
+  }
+
+  &__description {
+
+    &__text {
+      margin: 0;
+    }
+
+    &__list {
+      margin: .5em 0 0;
+      padding-left: 1.5em;
+    }
+  }
+
+  &__form {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-gap: .2em;
+
+    &__label {
+      margin-top: .8em;
+      grid-column: 1;
+    }
+
+    &__description {
+      grid-column: 2 / span 2;
+      margin-top: .8em;
+    }
+
+    &__input {
+      grid-column: 2 / span 2;
+      margin-top: .8em;
+      height: 20px;
+
+      &[type='range'] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+
+        //Style the track
+        &::-webkit-slider-runnable-track {
+          background-image: linear-gradient(to left, #10CB35E5, rgba(238, 224, 0), #fd1818);
+          height: 8px;
+          border-radius: .4rem;
+        }
+
+        &::-moz-range-track {
+          background-image: linear-gradient(to left, #10CB35E5, rgba(238, 224, 0), #fd1818);
+          height: 8px;
+          border-radius: .4rem;
+        }
+
+        //Style the slider
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          background-color: white;
+          border: 2px solid #000;
+          margin-top: -6px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          color: black;
+        }
+
+        &::-moz-range-thumb {
+          background-color: white;
+          border: 2px solid #000;
+          margin-top: -6px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          color: black;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 2em;
+      }
+    }
+
+    &__error {
+      grid-column: 2;
+      color: variables.$red;
+      font-size: .9em;
+    }
+
+    &__textarea {
+      grid-column: 2 / span 2;
+      margin-top: .8em;
+    }
+  }
+
+  &__button {
+    grid-column: 2 / span 2;
+    height: 2.5em;
+  }
+
+  &__sent {
+
+    &__diagramm {
+      display: none;
+    }
+  }
+}
+
+.error--http {
+  margin: 1rem;
+  padding: .5rem;
+  border-radius: 10px;
+  border: 4px solid black;
+  background-color: #fd1818;
+}
+
+/* -------------------------------------------------------------------- */
+/* media-queries */
+/* -------------------------------------------------------------------- */
+
+/* contact */
+@media (width >= 600px) {
+  .contact {
+    &__text {
+      margin: 1em auto 2em;
+    }
+  }
+}
+
+/* feedback */
+@media (width >= 600px){
+  .feedback {
+
+    &__description {
+      max-width: 40em;
+      margin: .5em auto 1em;
+
+      &__text {
+        margin: 0;
+      }
+
+      &__list {
+        margin: .5em 0 2em;
+      }
+    }
+
+    &__form {
+      max-width: 40em;
+      margin: 0 auto;
+    }
+    &__sent {
+      &__diagramm {
+        display: flex;
+        flex-wrap: wrap;
+
+        & div {
+          flex: 1 1;
+          margin: .5rem;
+        }
+      }
+    }
+  }
+}

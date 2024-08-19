@@ -1,0 +1,8 @@
+name: web_fundamentals
+
+services:
+  web:
+    build: .
+    container_name: website
+    ports:
+      - 80:80

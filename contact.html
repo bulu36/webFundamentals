@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gabarito">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/contact.js" type="module" defer></script>
+    <title>Kontakt / Feedback</title>
+    <link rel="icon" href="img/favicon.ico">
+</head>
+<body>
+    <!-- header with navigation menu -->
+    <header>
+        <div class="header">
+            <figure class="header__logo">
+                <img class="header__logo__image" src="img/LogoFW-30x30.png" alt="Logo">
+            </figure>
+            <h1 class="header__title">Feuerwehr Wattenwil</h1>
+        </div>
+    </header>
+    <nav class="topnav" id="topnav">
+        <a href="index.html" class=" topnav__link">Home</a>
+        <a href="organisation.html" class="topnav__link">Organisation</a>
+        <a href="dates.html" class="topnav__link">Termine</a>
+        <a href="resources.html" class="topnav__link">Einsatzmittel</a>
+        <a href="contact.html" class="topnav__link topnav__link--active">Kontakt</a>
+        <a id="topnav-button" class="topnav__icon"><i class="fa fa-bars fa-lg"></i></a>
+    </nav>
+    <main id="main">
+        <!-- contact -->
+        <form class="contact">
+            <h2 class="contact__title">Kontaktformular</h2>
+            <p class="contact__text">Bei Fragen oder sonstigen Wünschen können Sie uns gerne über das Formular kontaktieren.</p>
+            <div class="contact__form">
+                <label for="contact-form-name"><i class="contact__form__symbol fa fa-user fa-lg"></i></label>
+                <input id="contact-form-name" class="contact__form__input" type="text" placeholder="Nachname" name="name">
+                <span id="contact-form-errorName" class="contact__form__error"></span>
+                <label for="contact-form-mail"><i class="contact__form__symbol fa fa-at fa-lg"></i></label>
+                <input id="contact-form-mail" class="contact__form__input" type="email" placeholder="Email" name="email">
+                <span id="contact-form-errorMail" class="contact__form__error"></span>
+                <label for="contact-comment"><i class="contact__form__symbol fa fa-comment fa-lg"></i></label>
+                <textarea class="contact__form__textarea" id="contact-comment" name="message" rows="5" cols="1" placeholder="Deine Nachricht..."></textarea>
+                <button id="contact-form-btn" class="contact__button contact__button--sent" type="submit" disabled>Senden</button>
+            </div>
+        </form>
+
+        <!-- feedback -->
+        <form class="feedback">
+            <h2 class="feedback__title">Rückmeldung</h2>
+            <div class="feedback__description">
+                <p class="feedback__description__text">Gerne erhalten wir auch eine Rückmeldung zur Webseite:</p>
+                <ul class="feedback__description__list">
+                    <li>Gefällt dir unsere Seite?</li>
+                    <li>Welche Informationen fehlen dir?</li>
+                    <li>Was könnten wir verbessern?</li>
+                </ul>
+            </div>
+            <div class="feedback__form">
+                <label class="feedback__form__label" for="feedback-form-name"><i class="fa fa-user fa-lg"></i></label>
+                <input  id="feedback-form-name" class="feedback__form__input" type="text" placeholder="Name">
+                <span id="feedback-form-error-name" class="feedback__form__error"></span>
+                <label class="feedback__form__label" for="feedback-form-mail"><i class="fa fa-at fa-lg"></i></label>
+                <input id="feedback-form-mail" class="feedback__form__input" type="email" placeholder="Email">
+                <span id="feedback-form-error-mail" class="feedback__form__error"></span>
+                <p class="feedback__form__description">Design:</p>
+                <label class="feedback__form__label" for="feedback-form-ratingDesign"><i class="fa fa-pencil fa-lg"></i></label>
+                <input id="feedback-form-ratingDesign" class="feedback__form__input" type="range"  min="1" max="10">
+                <p class="feedback__form__description">Komponenten:</p>
+                <label class="feedback__form__label" for="feedback-form-ratingComponents"><i class="fa fa-object-group fa-lg"></i></label>
+                <input id="feedback-form-ratingComponents" class="feedback__form__input" type="range"  min="1" max="10">
+                <label class="feedback__form__label" for="feedback-comment"><i class="fa fa-comment fa-lg"></i></label>
+                <textarea class="feedback__form__textarea" id="feedback-comment" name="comment" rows="5" cols="1" placeholder="Deine Kommentar..."></textarea>
+                <button id="feedback-form-btn" class="feedback__button feedback__button--sent" type="submit" disabled>Senden</button>
+            </div>
+            <div class="feedback__sent" hidden>
+                <h2 class="feedback__sent__title"></h2>
+                <p class="feedback__sent__text"></p>
+                <div class="feedback__sent__diagramm">
+                    <div>
+                        <h3>Bewertung Design</h3>
+                        <p>In folgendem Diagramm sehen Sie die Verteilung der Bewertungen für das Design</p>
+                        <div id="feedback-diagramm-design"></div>
+                    </div>
+                    <div>
+                        <h3>Bewertung Komponenten</h3>
+                        <p>In folgendem Diagramm sehen Sie die Verteilung der Bewertungen für die Komponenten</p>
+                        <div id="feedback-diagramm-components"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <a class="footer__top" href="#top"><i class="fa fa-arrow-up"></i> back to top</a>
+        <a class="footer__contact" href="contact.html"><i class="fa fa-envelope-o"></i> contact</a>
+    </footer>
+</body>
+</html>
